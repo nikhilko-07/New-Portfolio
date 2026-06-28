@@ -1,0 +1,120 @@
+/* ==========================================================================
+      Ultra-Minimal Timeline Styles (Isolated CSS Module - Silver Theme)
+========================================================================== */
+
+.timeline {
+  position: relative;
+  padding-left: 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Slim vertical line aligned perfectly to 10px left */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  left: 10px;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.timelineItem {
+  position: relative;
+  transition: opacity 0.45s cubic-bezier(0.25, 1, 0.5, 1), transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+  cursor: pointer;
+}
+
+/* Focus fade effect: dim other items when list is hovered */
+.timeline:hover .timelineItem:not(:hover) {
+  opacity: 0.35;
+}
+
+/* Tiny timeline dot indicator aligned perfectly to center on vertical line */
+.timelineDot {
+  position: absolute;
+  left: -25px;
+  top: 8px;
+  transform: translateX(-50%);
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid #000000;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: 2;
+}
+
+.timelineItem:hover .timelineDot {
+  background: #ffffff;
+  box-shadow: 0 0 8px #ffffff;
+  transform: translateX(-50%) scale(1.3);
+}
+
+.activeItem .timelineDot {
+  background: #ffffff;
+  box-shadow: 0 0 10px #ffffff;
+  transform: translateX(-50%) scale(1.3);
+  animation: silverPulse 2.5s infinite;
+}
+
+.timelineDate {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 0.15rem;
+  letter-spacing: 1px;
+  transition: color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.timelineItem:hover .timelineDate,
+.activeItem .timelineDate {
+  color: #ffffff;
+}
+
+.timelineTitle {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  transition: color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.timelineCompany {
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 400;
+}
+
+.timelineDesc {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.5;
+  margin: 0.3rem 0 0 0;
+  transition: color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.activeItem .timelineDesc {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.techLine {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0.4rem 0 0 0;
+  transition: color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.timelineItem:hover .techLine,
+.activeItem .techLine {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Keyframe Animations */
+@keyframes silverPulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.35); }
+  70% { box-shadow: 0 0 0 6px rgba(255, 255, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+}

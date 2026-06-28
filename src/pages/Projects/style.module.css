@@ -1,0 +1,307 @@
+/* ==========================================================================
+      Futuristic Projects CSS Module - Silver Metallic Theme
+========================================================================== */
+
+.projectsSlideWrapper {
+  width: 100%;
+  max-width: 1100px;
+  padding: 2rem 4rem;
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.headerActions {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+/* Category Filters */
+.filters {
+  display: flex;
+  gap: 8px;
+}
+
+.filterTab {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.55);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  letter-spacing: 0.5px;
+}
+
+.filterTab:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.activeFilterTab {
+  color: #000000;
+  background: #ffffff;
+  border-color: #ffffff;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
+}
+
+/* Navigation Arrows */
+.navButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.navButton {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.6);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.navButton:hover:not(:disabled) {
+  color: #ffffff;
+  border-color: #ffffff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+}
+
+.navButton:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* Snap-Scroll Carousel Track */
+.carouselContainer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carouselTrack {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 10px 0;
+}
+
+/* Hide scrollbars natively */
+.carouselTrack::-webkit-scrollbar {
+  display: none;
+}
+
+.carouselTrack {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Metallic Dark Project Card */
+.projectCard {
+  flex: 0 0 calc((100% - 48px) / 3); /* Exactly 3 cards visible on desktop */
+  scroll-snap-align: start;
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  height: 420px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-sizing: border-box;
+}
+
+.projectCard:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+/* Image Header Container */
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.projectImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.projectCard:hover .projectImage {
+  transform: scale(1.08);
+}
+
+/* Gradient overlay */
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(9, 9, 9, 0.9) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Floating Link Icon */
+.linkButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(9, 9, 9, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  z-index: 5;
+  backdrop-filter: blur(4px);
+}
+
+.projectCard:hover .linkButton {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+}
+
+/* Content Area */
+.cardContent {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.projectTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.5rem 0;
+}
+
+.projectDesc {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.5;
+  margin: 0 0 1.2rem 0;
+  flex-grow: 1;
+}
+
+.projectCard:hover .projectDesc {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.projectTech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.techTag {
+  font-size: 0.72rem;
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(255, 255, 255, 0.75);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  transition: all 0.3s ease;
+}
+
+.projectCard:hover .techTag {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Animated Silver Shine sweep */
+.projectCard::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: skewX(-20deg);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.projectCard:hover::after {
+  left: 150%;
+  transition: left 0.9s ease-in-out;
+}
+
+/* ==========================================================================
+      Responsiveness / Media Queries
+========================================================================== */
+
+@media (max-width: 1024px) {
+  .projectsSlideWrapper {
+    padding: 2rem;
+  }
+  .projectCard {
+    flex: 0 0 calc((100% - 24px) / 2); /* 2 cards on tablet */
+  }
+  .sectionHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  .headerActions {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 768px) {
+  .projectCard {
+    flex: 0 0 100%; /* 1 card on mobile */
+    height: 380px;
+  }
+  .imageWrapper {
+    height: 150px;
+  }
+}
