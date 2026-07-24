@@ -35,11 +35,11 @@
 
 .filterTab {
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  color: rgba(255, 255, 255, 0.55);
-  padding: 6px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.65);
+  padding: 8px 18px;
   border-radius: 20px;
-  font-size: 0.8rem;
+  font-size: 0.92rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -48,7 +48,7 @@
 
 .filterTab:hover {
   color: #ffffff;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .activeFilterTab {
@@ -68,13 +68,13 @@
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.08);
   color: rgba(255, 255, 255, 0.6);
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -119,14 +119,14 @@
 
 /* Metallic Dark Project Card */
 .projectCard {
-  flex: 0 0 calc((100% - 48px) / 3); /* Exactly 3 cards visible on desktop */
+  flex: 0 0 calc((100% - 48px) / 3); /* 3 cards visible on large desktop */
   scroll-snap-align: start;
   background: rgba(255, 255, 255, 0.01);
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 16px;
   display: flex;
   flex-direction: column;
-  height: 420px;
+  height: clamp(390px, 52vh, 450px);
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -145,7 +145,7 @@
 .imageWrapper {
   position: relative;
   width: 100%;
-  height: 180px;
+  height: clamp(150px, 22vh, 190px);
   overflow: hidden;
   background: rgba(0, 0, 0, 0.2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -178,8 +178,8 @@
   position: absolute;
   top: 15px;
   right: 15px;
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   background: rgba(9, 9, 9, 0.85);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -187,7 +187,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   transition: all 0.3s ease;
   z-index: 5;
   backdrop-filter: blur(4px);
@@ -201,7 +201,7 @@
 
 /* Content Area */
 .cardContent {
-  padding: 1.5rem;
+  padding: 1.3rem 1.6rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -209,22 +209,22 @@
 }
 
 .projectTitle {
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   font-weight: 700;
   color: #ffffff;
   margin: 0 0 0.5rem 0;
 }
 
 .projectDesc {
-  font-size: 0.88rem;
-  color: rgba(255, 255, 255, 0.55);
-  line-height: 1.5;
-  margin: 0 0 1.2rem 0;
+  font-size: 0.96rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.55;
+  margin: 0 0 1rem 0;
   flex-grow: 1;
 }
 
 .projectCard:hover .projectDesc {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .projectTech {
@@ -234,14 +234,20 @@
 }
 
 .techTag {
-  font-size: 0.72rem;
-  background: rgba(255, 255, 255, 0.03);
-  color: rgba(255, 255, 255, 0.75);
-  padding: 4px 10px;
+  font-size: 0.8rem;
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.8);
+  padding: 5px 12px;
   border-radius: 12px;
   font-weight: 600;
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   transition: all 0.3s ease;
+}
+
+.projectCard:hover .techTag {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.15);
 }
 
 .projectCard:hover .techTag {
@@ -278,17 +284,17 @@
       Responsiveness / Media Queries
 ========================================================================== */
 
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
   .projectsSlideWrapper {
-    padding: 2rem;
+    padding: 1.5rem 2rem;
   }
   .projectCard {
-    flex: 0 0 calc((100% - 24px) / 2); /* 2 cards on tablet */
+    flex: 0 0 calc((100% - 24px) / 2); /* 2 cards on laptops / tablets */
   }
   .sectionHeader {
     flex-direction: column;
     align-items: flex-start;
-    gap: 1.5rem;
+    gap: 1.2rem;
   }
   .headerActions {
     width: 100%;

@@ -26,16 +26,16 @@
 }
 
 .contactDetailIcon {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.05);
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.55);
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.6);
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
@@ -48,19 +48,20 @@
 }
 
 .contactDetailText h4 {
-  font-size: 0.7rem;
-  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.45);
   text-transform: uppercase;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
   margin: 0;
 }
 
 .contactDetailText p {
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.8);
+  font-size: clamp(0.95rem, 3.5vw, 1.1rem);
+  color: rgba(255, 255, 255, 0.85);
   font-weight: 600;
-  margin: 1px 0 0 0;
+  margin: 2px 0 0 0;
   transition: color 0.3s ease;
+  word-break: break-word;
 }
 
 .contactDetailItem:hover .contactDetailText p {
@@ -70,21 +71,21 @@
 /* Horizontal Social Icons Row */
 .socialsRow {
   display: flex;
-  gap: 12px;
-  margin-top: 1.5rem;
+  gap: 14px;
+  margin-top: 1.8rem;
 }
 
 .socialIconButton {
-  width: 38px;
-  height: 38px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.05);
   display: flex;
   justify-content: center;
   align-items: center;
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 1.15rem;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
@@ -99,12 +100,12 @@
 /* Elegant Compact Form Card */
 .contactFormCard {
   width: 100%;
-  max-width: 440px;
+  max-width: 460px;
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.01);
   backdrop-filter: blur(12px);
-  padding: 1.8rem;
+  padding: 2rem;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
   position: relative;
   overflow: hidden;
@@ -119,32 +120,32 @@
 .contactFormElement {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1.3rem;
 }
 
 .contactFormGroup {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.5rem;
 }
 
 .contactFormGroup label {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.5);
   transition: color 0.3s ease;
 }
 
 .inputField,
 .textareaField {
   background: rgba(255, 255, 255, 0.01);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 10px;
-  padding: 0.7rem 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
   color: #ffffff;
-  font-size: 0.88rem;
+  font-size: 1rem;
   transition: all 0.3s ease;
   font-family: inherit;
 }
@@ -152,7 +153,7 @@
 .inputField:hover,
 .textareaField:hover {
   background: rgba(255, 255, 255, 0.02);
-  border-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
 .inputField:focus,
@@ -160,7 +161,7 @@
   outline: none;
   background: rgba(255, 255, 255, 0.03);
   border-color: #ffffff;
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.08);
 }
 
 .contactFormGroup:focus-within label {
@@ -172,18 +173,18 @@
   background: #ffffff;
   border: 1px solid #ffffff;
   color: #000000;
-  padding: 0.8rem 1.8rem;
-  border-radius: 10px;
-  font-size: 0.9rem;
+  padding: 0.9rem 2rem;
+  border-radius: 12px;
+  font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   letter-spacing: 0.5px;
-  margin-top: 0.3rem;
+  margin-top: 0.4rem;
 }
 
 .submitButton:hover {
@@ -302,5 +303,13 @@
 @media (max-width: 992px) {
   .contactFormCard {
     max-width: 100%;
+    margin-top: 1.5rem;
+  }
+  .socialsRow {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .contactDetailsList {
+    align-items: center;
   }
 }

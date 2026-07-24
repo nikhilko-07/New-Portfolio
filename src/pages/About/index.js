@@ -4,7 +4,7 @@ import styles from "./style.module.css";
 const EXPERIENCES = [
   {
     id: 1,
-    role: "Full Stack Developer Intern",
+    role: "Full Stack Developer",
     company: "OneTuza",
     period: "2026 - Present",
     description: "Architected modular design patterns in React.js and TypeScript, improving API latency by 35%.",
@@ -12,6 +12,14 @@ const EXPERIENCES = [
   },
   {
     id: 2,
+    role: "Full Stack Developer Intern",
+    company: "OneTuza",
+    period: "2026 - Present",
+    description: "Worked on ONETUZA App - an application that helps users to find best places around them",
+    skills: "React Native / TypeScript / Node.js / PostgreSQL / AWS"
+  },
+  {
+    id: 3,
     role: "Full Stack Developer Intern",
     company: "UNMP",
     period: "2024 - 2025",
@@ -43,14 +51,14 @@ export default function About() {
           {EXPERIENCES.map((exp, idx) => {
             const isActive = activeIndex === idx;
             return (
-              <div 
-                key={exp.id} 
+              <div
+                key={exp.id}
                 className={`${styles.timelineItem} ${isActive ? styles.activeItem : ""}`}
                 onClick={() => setActiveIndex(idx)}
               >
                 {/* Bullet Dot */}
                 <div className={styles.timelineDot} />
-                
+
                 {/* Content */}
                 <div className={styles.timelineDate}>{exp.period}</div>
                 <h3 className={styles.timelineTitle}>

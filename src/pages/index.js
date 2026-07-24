@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import Head from "next/head";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faTwitter, faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import Wrapper from "../wrapper";
@@ -97,13 +98,22 @@ export default function Home() {
 
   return (
     <Wrapper activeIndex={activeIndex} setActiveIndex={setActiveIndex}>
+      <Head>
+        <title>Nikhil Kohli | Full Stack Developer</title>
+        <meta name="description" content="Portfolio of Nikhil Kohli - Full Stack Developer" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
+      </Head>
       <div className="slider-container">
         
         {/* ==========================================
               Slide 1: Home / Hero
         ========================================== */}
         <section className={`slide-section slide-home ${getSlideClass(0)}`}>
-          <div className="hero" style={{ background: "transparent", minHeight: "auto", width: "100%" }}>
+          <div className="hero">
             
             {/* Left Social */}
             <div className="left-social">
