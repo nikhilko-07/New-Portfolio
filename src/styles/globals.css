@@ -428,16 +428,16 @@
 }
 
 .about-subtitle {
-  font-size: clamp(0.9rem, 1.1vw, 1.1rem);
-  letter-spacing: 5px;
-  color: rgba(255, 255, 255, 0.5);
-  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 4px;
+  color: rgba(255, 255, 255, 0.45);
+  font-weight: 600;
   text-transform: uppercase;
 }
 
 .about-title {
-  font-size: clamp(2.4rem, 4.5vw, 4rem);
-  font-weight: 900;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 800;
   letter-spacing: -1px;
   line-height: 1.1;
   background: linear-gradient(120deg, #ffffff, rgba(255,255,255,0.7));
@@ -446,9 +446,9 @@
 }
 
 .about-description {
-  font-size: clamp(1.1rem, 1.25vw, 1.35rem);
-  color: rgba(255, 255, 255, 0.75);
-  line-height: 1.75;
+  font-size: 0.98rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
 }
 
 .about-skills-block h4 {

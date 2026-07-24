@@ -10,10 +10,10 @@
     padding: 0 clamp(1.5rem, 4vw, 4rem);
     z-index: 9999;
     color: white;
-    background-color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .logo {
@@ -26,70 +26,12 @@
     letter-spacing: 2px;
 }
 
-.btns {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 8px;
-}
-
-.btn {
-    border: none;
-    background: none;
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 0.88rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    padding: 0.45rem 1rem;
-    border-radius: 20px;
-    position: relative;
-}
-
-.btn:hover {
-    color: white;
-    background-color: rgba(255, 255, 255, 0.08);
-}
-
-.activeBtn {
-    color: white !important;
-    background-color: rgba(255, 255, 255, 0.15) !important;
-    font-weight: 600;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
 @media (max-width: 768px) {
     .container {
-        padding: 0 0.8rem;
+        padding: 0 1.5rem;
         height: 60px;
     }
     .logo h1 {
         font-size: 1.3rem;
-    }
-    .btns {
-        gap: 4px;
-        max-width: calc(100vw - 60px);
-        overflow-x: auto;
-        white-space: nowrap;
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-    }
-    .btns::-webkit-scrollbar {
-        display: none;
-    }
-    .btn {
-        padding: 0.35rem 0.65rem;
-        font-size: 0.78rem;
-        flex-shrink: 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        padding: 0 0.5rem;
-    }
-    .btn {
-        padding: 0.3rem 0.5rem;
-        font-size: 0.74rem;
     }
 }

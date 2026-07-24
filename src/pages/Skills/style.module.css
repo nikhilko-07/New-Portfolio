@@ -18,23 +18,23 @@
 }
 
 .skills-header h2 {
-  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
-  font-weight: 900;
-  letter-spacing: 6px;
-  margin: 0 0 10px 0;
+  font-size: clamp(1.8rem, 2.8vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: 5px;
+  margin: 0 0 8px 0;
   text-transform: uppercase;
 }
 
 .heading-line {
-  width: 50px;
+  width: 40px;
   height: 2px;
   background: white;
-  margin: 0 auto 14px;
+  margin: 0 auto 10px;
 }
 
 .skills-header p {
-  color: #a0a0a0;
-  font-size: clamp(1rem, 1.2vw, 1.25rem);
+  color: #8d8d8d;
+  font-size: 0.92rem;
   font-style: italic;
   margin: 0;
 }
@@ -44,7 +44,7 @@
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  gap: 20px;
+  gap: 16px;
   width: 100%;
 }
 
@@ -54,8 +54,8 @@
   background: rgba(255, 255, 255, 0.01);
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 12px;
-  height: clamp(135px, 18vh, 165px);
-  padding: 1.2rem 0.8rem;
+  height: clamp(115px, 14vh, 135px);
+  padding: 0.8rem 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -98,8 +98,8 @@
 }
 
 .skill-icon {
-  font-size: clamp(32px, 2.8vw, 42px);
-  margin-bottom: 10px;
+  font-size: clamp(28px, 2.2vw, 34px);
+  margin-bottom: 8px;
   color: rgba(255, 255, 255, 0.45);
   transition: all 0.3s ease;
   display: flex;
@@ -114,17 +114,17 @@
 }
 
 .skill-card h4 {
-  font-size: clamp(0.78rem, 0.88vw, 0.94rem);
+  font-size: clamp(0.72rem, 0.8vw, 0.85rem);
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  color: #9a9a9a;
-  font-weight: 700;
+  color: #8a8a8a;
+  font-weight: 600;
   margin: 0;
   text-align: center;
   width: 100%;
   padding: 0 4px;
-  line-height: 1.25;
-  min-height: 2.5em;
+  line-height: 1.2;
+  min-height: 2.4em;
   display: flex;
   align-items: center;
   justify-content: center;
