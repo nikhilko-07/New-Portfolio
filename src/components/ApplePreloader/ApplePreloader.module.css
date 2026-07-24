@@ -1,0 +1,88 @@
+.preloaderContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000;
+  z-index: 999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: transform 1.45s cubic-bezier(0.76, 0, 0.24, 1);
+  will-change: transform;
+  user-select: none;
+  pointer-events: all;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.exiting {
+  transform: translateY(-100%);
+}
+
+.greetingWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  height: 100px;
+  width: 100%;
+  text-align: center;
+  transition: opacity 0.5s ease-out;
+}
+
+.exitingWrapper {
+  opacity: 0;
+}
+
+.greetingText {
+  font-family: "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 500;
+  color: #ffffff;
+  letter-spacing: -0.4px;
+  text-align: center;
+  margin: 0;
+  animation: cleanPureFade 0.18s ease-out forwards;
+  will-change: opacity, filter;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: none;
+}
+
+@keyframes cleanPureFade {
+  0% {
+    opacity: 0;
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+.svgWrapper {
+  position: absolute;
+  bottom: -120px;
+  left: 0;
+  width: 100%;
+  height: 140px;
+  pointer-events: none;
+  z-index: 1;
+  transition: transform 1.45s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.svgCurve {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .greetingText {
+    font-size: clamp(1.8rem, 7vw, 2.5rem);
+  }
+}

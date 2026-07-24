@@ -155,10 +155,12 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+  filter: grayscale(100%) opacity(0.85);
+  transition: filter 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .projectCard:hover .projectImage {
+  filter: grayscale(0%) opacity(1);
   transform: scale(1.08);
 }
 

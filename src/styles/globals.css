@@ -812,3 +812,51 @@
     max-width: 500px;
   }
 }
+
+/* ==========================================================================
+      Apple Intro Hero Entrance Smooth Animation
+========================================================================== */
+
+.hero-hidden .hero-content {
+  opacity: 0;
+  transform: translateY(35px);
+  filter: blur(8px);
+}
+
+.hero-hidden .left-social {
+  opacity: 0;
+  transform: translateY(-50%) translateX(-25px);
+}
+
+.hero-hidden .scroll-text {
+  opacity: 0;
+  transform: translateY(-50%) rotate(180deg) translateX(-25px);
+}
+
+.hero-revealed .hero-content {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0px);
+  transition: opacity 1.55s cubic-bezier(0.76, 0, 0.24, 1), transform 1.55s cubic-bezier(0.76, 0, 0.24, 1), filter 1.55s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.hero-revealed .left-social {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+  transition: opacity 1.55s cubic-bezier(0.76, 0, 0.24, 1) 0.12s, transform 1.55s cubic-bezier(0.76, 0, 0.24, 1) 0.12s;
+}
+
+.hero-revealed .scroll-text {
+  opacity: 1;
+  transform: translateY(-50%) rotate(180deg) translateX(0);
+  transition: opacity 1.55s cubic-bezier(0.76, 0, 0.24, 1) 0.22s, transform 1.55s cubic-bezier(0.76, 0, 0.24, 1) 0.22s;
+}
+
+@media (max-width: 768px) {
+  .hero-hidden .left-social {
+    transform: translateX(-50%) translateY(30px);
+  }
+  .hero-revealed .left-social {
+    transform: translateX(-50%) translateY(0);
+  }
+}

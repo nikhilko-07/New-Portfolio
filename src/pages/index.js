@@ -7,13 +7,22 @@ import About from "./About";
 import Skills from "./Skills";
 import Projects from "./Projects";
 import Contact from "./Contact";
+import ApplePreloader from "../components/ApplePreloader";
 
 export default function Home() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isIntroLoaded, setIsIntroLoaded] = useState(false);
   const isTransitioningRef = useRef(false);
   const touchStartRef = useRef(0);
 
+  const isIntroLoadedRef = useRef(false);
+
+  useEffect(() => {
+    isIntroLoadedRef.current = isIntroLoaded;
+  }, [isIntroLoaded]);
+
   const triggerTransition = (nextIndex) => {
+    if (!isIntroLoadedRef.current) return; // Ignore input until intro finishes
     if (nextIndex < 0 || nextIndex >= 5) return; // 5 slides total (Hero, About, Skills, Projects, and Contact)
     console.log("[Slider] Transitioning to index:", nextIndex);
     isTransitioningRef.current = true;
@@ -25,6 +34,7 @@ export default function Home() {
 
   useEffect(() => {
     const handleWheel = (e) => {
+      if (!isIntroLoadedRef.current) return;
       if (Math.abs(e.deltaY) < 10) return; // lower threshold for responsive scrolling
       if (isTransitioningRef.current) return;
 
@@ -40,10 +50,12 @@ export default function Home() {
     };
 
     const handleTouchStart = (e) => {
+      if (!isIntroLoadedRef.current) return;
       touchStartRef.current = e.touches[0].clientY;
     };
 
     const handleTouchMove = (e) => {
+      if (!isIntroLoadedRef.current) return;
       if (isTransitioningRef.current) return;
       const touchEnd = e.touches[0].clientY;
       const diff = touchStartRef.current - touchEnd;
@@ -62,6 +74,7 @@ export default function Home() {
     };
 
     const handleKeyDown = (e) => {
+      if (!isIntroLoadedRef.current) return;
       if (isTransitioningRef.current) return;
 
       if (e.key === "ArrowDown" || e.key === "PageDown" || (e.key === " " && !e.shiftKey)) {
@@ -88,7 +101,7 @@ export default function Home() {
       window.removeEventListener("touchmove", handleTouchMove);
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [activeIndex]);
+  }, [activeIndex, isIntroLoaded]);
 
   const getSlideClass = (index) => {
     if (index === activeIndex) return "slide-active";
@@ -107,13 +120,16 @@ export default function Home() {
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/favicon.png" />
       </Head>
-      <div className="slider-container">
+
+      <ApplePreloader onExitStart={() => setIsIntroLoaded(true)} onComplete={() => setIsIntroLoaded(true)} />
+
+      <div className={`slider-container ${isIntroLoaded ? "intro-loaded" : "intro-loading"}`}>
         
         {/* ==========================================
               Slide 1: Home / Hero
         ========================================== */}
         <section className={`slide-section slide-home ${getSlideClass(0)}`}>
-          <div className="hero">
+          <div className={`hero ${isIntroLoaded ? "hero-revealed" : "hero-hidden"}`}>
             
             {/* Left Social */}
             <div className="left-social">
