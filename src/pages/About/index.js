@@ -8,7 +8,7 @@ const EXPERIENCES = [
     company: "OneTuza",
     period: "2026 - Present",
     description: "Architected modular design patterns in React.js and TypeScript, improving API latency by 35%.",
-    skills: "React.js / TypeScript / Node.js / PostgreSQL / AWS"
+    skills: "React.js / TypeScript / Node.js / PostgreSQL / AWS / Python"
   },
   {
     id: 2,
