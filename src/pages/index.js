@@ -156,7 +156,7 @@ export default function Home() {
             <div className="hero-content">
               <span className="iam">I AM</span>
               <h1 className="title">NIKHIL</h1>
-              <span className="designation">FULL STACK DEVELOPER</span>
+              <span className="designation">SOFTWARE ENGINEER</span>
             </div>
 
             {/* Right */}
