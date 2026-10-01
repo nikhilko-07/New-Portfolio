@@ -4,7 +4,7 @@ import styles from "./style.module.css";
 const EXPERIENCES = [
   {
     id: 1,
-    role: "Full Stack Developer",
+    role: "SDE-1",
     company: "OneTuza",
     period: "2026 - Present",
     description: "Architected modular design patterns in React.js and TypeScript, improving API latency by 35%.",
